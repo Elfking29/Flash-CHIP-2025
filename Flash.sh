@@ -68,13 +68,13 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="067b", ATTRS{idProduct}=="2303", GROUP="plug
 sudo udevadm control --reload-rules
 
 echo -e "\n Installing CHIP-tools"
-if [ -d CHIP-tools ]; then
- cd CHIP-tools 
+if [ -d CHIP-tools-2025 ]; then
+ cd CHIP-tools-2025 
  git pull 
  FEL='sudo sunxi-fel' FASTBOOT='sudo fastboot' SNIB=false ./chip-update-firmware.sh -$flavour
- elif [ ! -d CHIP-tools ]; then
- git clone https://github.com/rtxanson/CHIP-tools.git
- cd  CHIP-tools 
+ elif [ ! -d CHIP-tools-2025 ]; then
+ git clone https://github.com/Elfking29/CHIP-tools-2025
+ cd  CHIP-tools-2025 
  FEL='sudo sunxi-fel' FASTBOOT='sudo fastboot' SNIB=false ./chip-update-firmware.sh -$flavour
 fi
 
