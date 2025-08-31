@@ -74,7 +74,7 @@ if [ -d CHIP-tools ]; then
  FEL='sudo sunxi-fel' FASTBOOT='sudo fastboot' SNIB=false ./chip-update-firmware.sh -$flavour
  elif [ ! -d CHIP-tools ]; then
  git clone https://github.com/rtxanson/CHIP-tools.git
- cd  CHIP-tools 
+ cd  CHIP-tools-2025 
  FEL='sudo sunxi-fel' FASTBOOT='sudo fastboot' SNIB=false ./chip-update-firmware.sh -$flavour
 fi
 
